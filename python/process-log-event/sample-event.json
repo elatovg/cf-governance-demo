@@ -1,0 +1,130 @@
+{
+  "insertId": "randomid",
+  "logName": "projects/my-project/logs/cloudaudit.googleapis.com%2Factivity",
+  "protoPayload": {
+    "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+    "authenticationInfo": {
+      "principalEmail": "gcp-user@email.com"
+    },
+    "authorizationInfo": [
+      {
+        "granted": true,
+        "permission": "resourcemanager.projects.setIamPolicy",
+        "resource": "projects/my-project",
+        "resourceAttributes": {}
+      }
+    ],
+    "methodName": "SetIamPolicy",
+    "request": {
+      "@type": "type.googleapis.com/google.iam.v1.SetIamPolicyRequest",
+      "policy": {
+        "bindings": [
+          {
+            "members": [
+              "serviceAccount:service-account@gcf-admin-robot.iam.gserviceaccount.com"
+            ],
+            "role": "roles/cloudfunctions.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:service-account@compute-system.iam.gserviceaccount.com"
+            ],
+            "role": "roles/compute.serviceAgent"
+          },
+          {
+            "members": [
+              "serviceAccount:compute-sa@developer.gserviceaccount.com",
+              "serviceAccount:other-sa@cloudservices.gserviceaccount.com",
+              "serviceAccount:my-project@appspot.gserviceaccount.com",
+              "user:other-user@mail.com"
+            ],
+            "role": "roles/editor"
+          },
+          {
+            "members": [
+              "user:gcp-user@email.com"
+            ],
+            "role": "roles/owner"
+          },
+          {
+            "members": [
+              "serviceAccount:service-account@sourcerepo-service-accounts.iam.gserviceaccount.com"
+            ],
+            "role": "roles/sourcerepo.serviceAgent"
+          }
+        ],
+        "etag": "random-etag"
+      },
+      "resource": "my-project"
+    },
+    "requestMetadata": {
+      "callerIp": "X.X.X.X",
+      "callerSuppliedUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+      "destinationAttributes": {},
+      "requestAttributes": {}
+    },
+    "resourceName": "projects/my-project",
+    "response": {
+      "@type": "type.googleapis.com/google.iam.v1.Policy",
+      "bindings": [
+        {
+          "members": [
+            "serviceAccount:service-account@gcf-admin-robot.iam.gserviceaccount.com"
+          ],
+          "role": "roles/cloudfunctions.serviceAgent"
+        },
+        {
+          "members": [
+            "serviceAccount:service-account@compute-system.iam.gserviceaccount.com"
+          ],
+          "role": "roles/compute.serviceAgent"
+        },
+        {
+          "members": [
+            "serviceAccount:compute-sa@developer.gserviceaccount.com",
+            "serviceAccount:other-sa@cloudservices.gserviceaccount.com",
+            "serviceAccount:my-project@appspot.gserviceaccount.com",
+            "user:other-user@mail.com"
+          ],
+          "role": "roles/editor"
+        },
+        {
+          "members": [
+            "user:gcp-user@email.com"
+          ],
+          "role": "roles/owner"
+        },
+        {
+          "members": [
+            "serviceAccount:service-account@sourcerepo-service-accounts.iam.gserviceaccount.com"
+          ],
+          "role": "roles/sourcerepo.serviceAgent"
+        }
+      ],
+      "etag": "random-etag"
+    },
+    "serviceData": {
+      "@type": "type.googleapis.com/google.iam.v1.logging.AuditData",
+      "policyDelta": {
+        "bindingDeltas": [
+          {
+            "action": "ADD",
+            "member": "user:other-user@mail.com",
+            "role": "roles/editor"
+          }
+        ]
+      }
+    },
+    "serviceName": "cloudresourcemanager.googleapis.com",
+    "status": {}
+  },
+  "receiveTimestamp": "2019-01-21T02:08:23.659590473Z",
+  "resource": {
+    "labels": {
+      "project_id": "my-project"
+    },
+    "type": "project"
+  },
+  "severity": "NOTICE",
+  "timestamp": "2019-01-21T02:08:22.116Z"
+}
